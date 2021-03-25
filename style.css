@@ -59,10 +59,10 @@ body{
     z-index: 11;
     border-radius:50%;
     box-shadow: inset 0 100px 100px rgba(255, 255, 255, 0.5),                     inset 0 -100px 100px rgba(0, 0, 0, 0.5),                                      inset 0 0 100px rgba(0, 0, 0, 1);
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
 }
 .sphere::after{
     content: " ";
@@ -191,10 +191,10 @@ video{
     margin-top: 10px;
     color: #111;
     transition: 0.2s;
-    -webkit-transition:;
-    -moz-transition:;
-    -ms-transition:;
-    -o-transition:;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
 }
 .text a:hover{
     letter-spacing: 6px;
@@ -260,16 +260,48 @@ video{
         top: 300px;
     }
     .sphere::after{
-        width: 350px;
+        width: 400px;
         height: 50px;
     }
     .container, .container header{
         padding: 40px;
     }
+    .text{
+        top: -100px;
+    }
     .text h2{
-        font-size: 3em;
+        font-size: 2em;
     }
     .text h3{
-        font-size: 2em;
+        font-size: 1em;
+    }
+    .text p{
+        font-size: 0.9em;
+    }
+}
+@media screen and (max-width:385px){
+    .sphere{
+        width: 250px;
+        height: 250px;
+    }
+    .sphere::after{
+        width: 350px;
+    }
+    .container header{
+        padding: 10px;
+    }
+    .text h2{
+        font-size: 1.5em;
+    }
+    .text p{
+        font-size: 0.8em;
+    }
+}
+@media screen and (max-width:330px){
+    .text h2{
+        font-size:1.2em;
+    }
+    .text p{
+        font-size: 0.8em;
     }
 }
