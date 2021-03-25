@@ -35,17 +35,6 @@ body{
     right: 300px;
 }
 
-.showcase header{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    padding: 40px 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
-}
 .sphere{
     position: relative;
     border-radius:50%;
@@ -69,13 +58,11 @@ body{
     height: 100%;
     z-index: 11;
     border-radius:50%;
-    box-shadow: inset 0 100px 100px rgba(255, 255, 255, 0.5), 
-                    inset 0 -100px 100px rgba(0, 0, 0, 0.5), 
-                                     inset 0 0 100px rgba(0, 0, 0, 1);
-    -webkit-border-radius:50%;
-    -moz-border-radius:50%;
-    -ms-border-radius:50%;
-    -o-border-radius:50%;
+    box-shadow: inset 0 100px 100px rgba(255, 255, 255, 0.5),                     inset 0 -100px 100px rgba(0, 0, 0, 0.5),                                      inset 0 0 100px rgba(0, 0, 0, 1);
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
 }
 .sphere::after{
     content: " ";
@@ -102,6 +89,13 @@ body{
     filter: blur(0);
     border-radius:50%;
     -webkit-filter: blur(0);
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+}
+.sphere.active{
+    right: 300px;
 }
 .logo{
     text-transform:uppercase;
@@ -140,6 +134,31 @@ video{
     left: 0;
     mix-blend-mode:overlay;
 }
+.container{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.container header{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+.container.active{
+    right: 300px;
+}
 .text{
     position: relative;
     z-index: 10;
@@ -172,29 +191,30 @@ video{
     margin-top: 10px;
     color: #111;
     transition: 0.2s;
-    -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
-    -ms-transition: 0.2s;
-    -o-transition: 0.2s;
+    -webkit-transition:;
+    -moz-transition:;
+    -ms-transition:;
+    -o-transition:;
 }
 .text a:hover{
     letter-spacing: 6px;
 }
-.social{
+.social{    
     position: absolute;
     bottom: 20px;
     display: flex;
     justify-content:center;
     align-items: center;
     list-style: none;
+    z-index: 5;
 }
 .social li a{
     display: inline-block;
     margin-right: 20px;
-    filter: invert(1);
+    filter: invert(0);
     transform: scale(1);
     transition:0.5s;
-    -webkit-filter: invert(1);
+    -webkit-filter: invert(0);
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -234,7 +254,16 @@ video{
     color: var(--main-color);
 }
 @media(max-width:768px){
-    .showcase, .showcase header{
+    .sphere{
+        width: 300px;
+        height: 300px;
+        top: 300px;
+    }
+    .sphere::after{
+        width: 350px;
+        height: 50px;
+    }
+    .container, .container header{
         padding: 40px;
     }
     .text h2{

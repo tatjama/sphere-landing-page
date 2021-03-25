@@ -8,14 +8,22 @@
 </head>
 <body>
     <section class="showcase"> 
+       
+        
+        <video src="./hanioti.mp4" autoPlay loop muted></video>
+        <div class="overlay"></div>
+       
+    </section>
+    <div class="sphere">
+        <video src="./hanioti.mp4" autoPlay loop muted></video>
+    </div>
+    <div class="container">
         <header>
             <h2 class="logo">Travel</h2>
             <div class="toggle ">
 
             </div>
         </header>
-        <video src="./hanioti.mp4" autoPlay loop muted></video>
-        <div class="overlay"></div>
         <div class="text">
             <h2>Never stop</h2>
             <h3>Explore the world</h3>
@@ -24,17 +32,14 @@
             </p>
             <a href="#">Explore</a>
             
-        </div>
-        
+        </div>        
         <ul class="social">
             <li><a href="#"><img src="./images/008-twitter.png" alt="twitter"/></a></li>
             <li><a href="#"><img src="./images/facebook-1.png" alt="facebook"/></a></li>
             <li><a href="#"><img src="./images/instagram-2.png" alt="instagram"/></a></li>
             <li><a href="#"><img src="./images/linkedin-1.png" alt="linkedin"/></a></li>
         </ul>
-    </section>
-    <div class="sphere">
-        <video src="./hanioti.mp4" autoPlay loop muted></video>
+
     </div>
     <div class="menu">
         <ul>
@@ -48,9 +53,13 @@
     <script type="text/javascript">
     const showcase = document.querySelector('.showcase');
     const toggle = document.querySelector('.toggle');
+    const container = document.querySelector('.container');
+    const sphere = document.querySelector('.sphere');
     toggle.addEventListener('click', () => {
         toggle.classList.toggle('active')
         showcase.classList.toggle('active')
+        container.classList.toggle('active')
+        sphere.classList.toggle('active')
     })
 
     </script>
